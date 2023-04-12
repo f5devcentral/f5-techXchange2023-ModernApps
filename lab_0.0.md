@@ -14,8 +14,11 @@
 
 ## Gather the required values
 - AWS ephemeral credentials
+- XC tenant
 - XC Volterra Token
 - XC P12 File and Password
+- XC namespace
+
 ## Configure input variables
 - open `ef.input.demo.yaml`
 - more stuff
