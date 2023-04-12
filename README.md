@@ -15,12 +15,12 @@ To setup your lab environmet, read ["Getting Started"](lab_0.0.md) <insert MD hy
   
 ### [Lab 1.2](lab_1.2.md) - Apps and Meshes ... Oh My!
   
-## [Lab 2](lab_2.0.md) 
+## [Lab 2](lab_2.0.md) - all of the flavors of k8s
   
-### [Lab 2.1](lab_2.1.md)
-### [Lab 2.2](lab_2.2.md)
-### [Lab 2.3](lab_2.3.md)
-### [Lab 2.4](lab_2.4.md) (Optional)
+### [Lab 2.1](lab_2.1.md) - Managed k8s (mk8s)
+### [Lab 2.2](lab_2.2.md) - Virtual k8s (vk8s)
+### [Lab 2.3](lab_2.3.md) - get the kubeconfig!!
+### [Lab 2.4](lab_2.4.md) - architecture with  (Optional)
 ### [Lab 2.5](lab_2.5.md) (Optional)
   
 ## Support
