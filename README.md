@@ -7,7 +7,7 @@ F5 Distributed Cloud - Modern Apps Lab guides
 
 ## Getting Started
 
-To setup your lab environmet, read "Getting Started" <insert MD hyperlink>
+To setup your lab environmet, read ["Getting Started"](lab_0.0.md) <insert MD hyperlink>
 
 ## Support
 
