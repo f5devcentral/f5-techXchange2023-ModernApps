@@ -10,13 +10,9 @@ F5 Distributed Cloud - Modern Apps Lab guides
 To setup your lab environmet, read ["Getting Started"](lab_0.0.md) <insert MD hyperlink>
 
 ## [Lab 1](lab_1.0.md) - Multi-Cloud Networking (MCN) for Modern Apps  
-  
 ### [Lab 1.1](lab_1.1.md) - Build some sites
-  
 ### [Lab 1.2](lab_1.2.md) - Apps and Meshes ... Oh My!
-  
 ## [Lab 2](lab_2.0.md) - all of the flavors of k8s
-  
 ### [Lab 2.1](lab_2.1.md) - Managed k8s (mk8s)
 ### [Lab 2.2](lab_2.2.md) - Virtual k8s (vk8s)
 ### [Lab 2.3](lab_2.3.md) - get the kubeconfig!!
