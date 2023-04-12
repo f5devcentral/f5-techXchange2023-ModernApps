@@ -1,28 +1,13 @@
 # Solutions Engineering Template Repository
 
-A template repository that contains all required files (LICENSE, SUPPORT, CONTRIBUTING, etc) as outlined in the org standards.  
-
-The sections below are recommended in your project's README.md file.
 
 ## Overview
 
-Provide a short overview of the project.
+F5 Distributed Cloud - Modern Apps Lab guides
 
 ## Getting Started
 
-Provide a quick example of how to use your code.  This should provide the user with a launch point to quickly see what the project can offer them.
-
-## Installation
-
-Outline the requirements and steps to install this project.
-
-## Usage
-
-Outline how the user can use your project and the various features the project offers.
-
-## Development
-
-Outline any requirements to setup a development environment if someone would like to contribute.  You may also link to another file for this information.
+To setup your lab environmet, read "Getting Started" <insert MD hyperlink>
 
 ## Support
 
