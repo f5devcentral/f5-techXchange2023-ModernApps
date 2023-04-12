@@ -18,8 +18,6 @@ To setup your lab environmet, read ["Getting Started"](lab_0.0.md) <insert MD hy
 ## [Lab 2](lab_2.0.md) 
   
 ### [Lab 2.1](lab_2.1.md)
-  
-### [Lab 2.1](lab_2.1.md)
 ### [Lab 2.2](lab_2.2.md)
 ### [Lab 2.3](lab_2.3.md)
 ### [Lab 2.4](lab_2.4.md) (Optional)
