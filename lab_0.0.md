@@ -12,17 +12,20 @@
 
 ## Prepare the environment for the build
 
-## Gather the required values
+### Gather the required values
 - AWS ephemeral credentials
 - XC tenant
 - XC Volterra Token
 - XC P12 File and Password
 - XC namespace
 
-## Configure input variables
+### Configure input variables
 - open `ef.input.demo.yaml`
 - more stuff
-## Configure environment variables
+### Configure environment variables
 - open `ef.env.demo.yaml`
 - more stuff
 
+### Observations
+- `terragrunt run-all apply` but reply `n` to the prompt to proceed.
+- what else?
