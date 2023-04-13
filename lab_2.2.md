@@ -1,5 +1,7 @@
 ### Virtual K8s and Apps on vk8s
 
+- This lab will be performed by DevOps
+
 ### In this Lab
 - Create a virtual site identifying XC regional edge locations
 - Create a vk8s cluster object in XC, pointing to this virtual site
@@ -16,4 +18,3 @@
   - Generate some traffic to your pod and review traffic statistics
 
 ### Takeaways
-
