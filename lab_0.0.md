@@ -1,9 +1,15 @@
 ## Access the environment
+- pick the person on your team who will run the deployment
 ### Start the UDF blueprint
-
+- find the blueprint
+- create a deployment
+- start the deployment
+- share with teammates, using the share button (f5 email addresses only)
 ### Log into the DevBox
-
+- decide who uses which box
+- RDP into your box
 ### Observations
+ - start VS Code
  - Terragrunt
  - Terraform
  - AZ CLI
