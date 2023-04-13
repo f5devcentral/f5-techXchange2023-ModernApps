@@ -12,7 +12,8 @@ In this Lab you will
   - terragrunt run-all apply --terragrunt-modules-that-include ./vm-app-mesh.hcl
 
 ### Observe
-  Traverse from VM in Azure to the App in AWS
+  - XC WAAP policy auto-assigned to LB (created by Sec Ops in previous step)
+  - Traverse from VM in Azure to the App in AWS
     - from the Azure VM, open XC Load Balanced FQDN (Advertized to internet)
     - from the Azure VM, curl to the private IP in AWS (Advertized to Site mesh)
 
