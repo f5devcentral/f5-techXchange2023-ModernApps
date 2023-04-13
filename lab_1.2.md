@@ -1,6 +1,6 @@
 ### Deploy App and Sitemesh
 
-This lab will be deployed by DevOps
+This lab will be deployed by AppDev
 
 In this Lab you will 
   - deploy 2 VMs one in AWS and one in Azure in spoke VPC/VNET
