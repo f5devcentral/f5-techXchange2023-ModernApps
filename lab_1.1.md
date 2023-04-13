@@ -1,6 +1,6 @@
-The following steps are to be performed by NetOps Persona in each team
+The following steps are to be performed by Platform Ops Persona in each team
 
-### Build VPC and VNET sites (NetOps)
+### Build VPC and VNET sites (Platform Ops)
   - terragrunt run-all apply --terragrunt-modules-that-include ./sites.hcl
 
 ### Observe outputs:
