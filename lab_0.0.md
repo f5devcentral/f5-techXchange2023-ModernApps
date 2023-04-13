@@ -54,3 +54,14 @@
   - Azure creds have been created and specific in the file (you created AWS creds above)
   - XC API token and Credential cert (p12) are generated ahead of time and staged in this env for you 
   - AzureSPN client ID and password are generated ahead of time and staged in this env for you 
+ 
+ ### Create AWS and Azure Base environments (NetOps)
+  - terragrunt run-all apply --terragrunt-modules-that-include ./base.hcl
+ 
+ ### Observe
+  - Log into AWS console (using console link and creds from UDF deployment under "Cloud Accounts")
+  - Search for EC2 --> EC2 Global View --> Global Search 
+  - type in your project_prefix to identify all the objects created with that project_prefix
+ 
+  - Log into Azure Console (custom credentials)
+  - Search for your project_prefix to identify all the objects created with that project_prefix
