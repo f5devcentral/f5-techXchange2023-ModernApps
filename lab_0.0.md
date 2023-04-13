@@ -1,11 +1,11 @@
 ## Access the environment
 - pick the person on your team who will run the deployment
-### Start the UDF blueprint - NetOps 
+### Start the UDF blueprint (NetOps) 
 - find the blueprint
 - create a deployment
 - start the deployment
 - share with teammates, using the share button (f5 email addresses only)
-### Log into the DevBox
+### Log into the DevBox (All Personas)
 - decide who uses which box
 - RDP into your box
 ### Observations (All Personas)
@@ -31,7 +31,8 @@
 - For AWS_ACCESS_KEY_ID, capture from UDF and paste (careful not to include whitespaces/special chars)
 - For AWS_SECRET_ACCESS_KEY, capture from UDF and paste (careful not to include whitespaces/special chars)
 
-### Create AWS Cloud Cred
+### Create SSH key for AWS and XC Cloud Cred for AWS deployments
+- Programmaticaly create SSH key and import to AWS regions (us-east-2 and us-west-2)
 - Programmatically create cloud cred using aws ephemeral creds obtained earlier
 
 ### Configure input variables 
