@@ -86,13 +86,5 @@ sops `ef.env.demo.yaml`
 - XC API token and Credential cert (p12) are generated ahead of time and staged in this env for you
 - AzureSPN client ID and password are generated ahead of time and staged in this env for you
 
-### Create AWS and Azure Base environments (NetOps)
 
-1. Run the following:
-
-  ```bash
-  terragrunt run-all apply --terragrunt-modules-that-include ./appstack.hcl
-  ```
-
-### Observe
-
+3) 

@@ -17,10 +17,9 @@ This lab will use Terragrunt to sequentially apply terraform modules in the orde
 1) Terragrunt will now sequentially apply the various terraform modules, in the order specified by the dependencies stanza (defined in the terragrunt.hcl file, inside each module directory eg: aws-base-1/terragrunt.hcl)
 2) There are pre-checks and post-checks built into the framework, to check status of objects before proceeding
 
-![Module Grouping](./tgra-appstack-groups.png)
+![Module Grouping](./images/tgra-appstack-groups.png)
 
 
 
-## [Lab 1.1](lab_1.1.md) - Build some sites
 
-## [Lab 1.2](lab_1.2.md) - Apps and Meshes ... Oh My!
+## [Lab 1.2](lab_1.2.md) - Kubeconfig & Managed K8s

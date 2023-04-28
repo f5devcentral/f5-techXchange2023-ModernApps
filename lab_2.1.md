@@ -1,25 +1,26 @@
-# Managed K8s Cluster Object and AppStack sites
+## Lab 2.0
+### Managed K8s on Appstack
 
-- The steps in this lab will be performed by Platform Ops
+In the previous step, the vpc site with appstack was created. Once the site is on, it looks as follows:
 
-- In this lab you will:
-  - Build a Managed K8s (mk8s/pk8s) cluster object in XC
-  - Build XC AppStack sites in AWS/Azure
+![](./images/mk8s-alive.png)
 
-## Lab Steps
+### Observe
+    Notice that you are able to view the AWS cluster size and system utilization details from the XC console, as well as the number of deployments/replicasets/jobs and services 
 
-1. Run the following command:
+### Get The Kubeconfig
+1) Navigate to Managed K8s --> Overview --> (search your student-ID in the search bar)
+2) Click the sandwich menu under "Actions"
+![](./images/get-kubeconfig.png)
+3) Click on "Download Global Kubeconfig"
+   
+   ***Note:*** You will notice that the "Download Local Kubeconfig" option is locked out for for the Managed K8s cluster. This is normal since XC requires the use of Global Kubeconfig to deploy apps
+4) Next, you will be prompted to specify an expiration date for the Kubeconfig. Choose 1  day out, and click "Download Credential"
+![](./images/kc-credential-date.png)
 
-    ```bash
-    terragrunt run-all apply --terragrunt-modules-that-include ./mk8s-appstack.hcl
-    ```
+5) The kubeconfig will be downloaded in the /home/ubuntu/Downloads directory. Now go to vscode and set the KUBECONFIG as follows (*** Replace "teamname" with your custom "teamname"):
 
-## Observe
-
-- In XC Console, review the mk8s cluster object under **Distributed Apps --> Managed K8s**
-- In AWS/Azure Console, review the nodes created for the AppStack site
-
-## Note
-
-- This process takes over 20 mins to complete, before sites show "online". This is expected
-- If you see "waiting for registration" or "applied with errors" please contact the lab instructors
+```bash
+export KUBECONFIG=/home/ubuntu/Downloads/ves_system_<teamname>_appstackvpc-1_kubeconfig_global.yaml
+  ```
+![](./images/set-kc-context.png)

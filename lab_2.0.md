@@ -1,11 +1,20 @@
 # Outline
 
-## [Lab 2.1](lab_2.1.md) - Managed k8s (mk8s)
+In the following set of labs, you will deploy an app on Managed K8s and Virtual K8s
 
-## [Lab 2.2](lab_2.2.md) - Virtual k8s (vk8s)
+### Managed K8s
+1) Get Kubeconfig from the XC Console
+2) Set context to run kubectl commands against the Managed K8s cluster from terminal
+3) Deploy a microservices demo app on Managed K8s 
+4) Deploy an XC Origin pool (pointing to mk8s service) and Load Balancer object, in your student namespace
 
-## [Lab 2.3](lab_2.3.md) - get the kubeconfig!!
+### Virtual K8s
 
-## [Lab 2.4](lab_2.4.md) - architecture with vk8s and mk8s (Optional)
+1) Deploy a virtual site and Virtual K8s Object 
+2) Get Kubeconfig from XC Console
+3) Deploy microservices demo app on vK8s
+4) Deploy an XC Origin pool (pointing to vk8s service) and Load Balancer object, in your student namespace
 
-## [Lab 2.5](lab_2.5.md) - service discovery with AKS or EKS (Optional)
+### Clean Up 
+
+### Observe differences
