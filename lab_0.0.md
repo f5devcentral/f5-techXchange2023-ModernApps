@@ -1,20 +1,17 @@
 # Objectives
+This lab introduces you to the strucrture of Terraform Modular Demo Framework, and illustrates deployment of an App on XC Managed K8s and XC Virtual K8s cluster.
 
 ## Access the environment
 
-- pick the person on your team who will run the deployment
+-- Log into https://udf.f5.com 
+-- Look for "Terraform Modular Demo Framework" under "Blueprints", then Deploy (use Systems Engineers cost center)
+-- Go to "Deployments" --> Find the deployment, and click "Start"
 
-### Start the UDF blueprint (NetOps)
 
-- Find the blueprint
-- Create a deployment
-- Start the deployment
-- Share with teammates, using the share button (F5 email addresses only)
+### Log into the DevBox 
 
-### Log into the DevBox (All Personas)
-
-- Decide who uses which box
-- RDP into your box
+- RDP into the devbox
+    > ***Note:*** - The devbox has all necessary tools installed, so RDP is the preferred method for completing this lab.
 
 ### Observations (All Personas)
 
@@ -49,17 +46,16 @@ sops `ef.env.demo.yaml`
 
 1. For `AWS_SECRET_ACCESS_KEY`, capture this from UDF and paste (careful not to include whitespaces/special chars)
 
-### Create SSH key for AWS and XC Cloud Cred for AWS deployments
-
-1. Programmatically create SSH key and import to AWS regions (us-east-2 and us-west-2)
-
-1. Programmatically create cloud cred using aws ephemeral creds obtained earlier
 
 ### Configure input variables
 
-1. Run `sops ef.input.demo.yaml`
+1. look for "terragrunt.hcl" in the root directory of "terraform-modular-demo-framework"
+   1. Modify the "teamname" value to match the format below:
+      1. <(first-name-initial)>.<(last name)>" (eg: j-smith for John Smith)
+   
+2. Run `sops ef.input.demo.yaml`
 
-1. Modify the following variables:
+3. Modify the following variables:
     - `project_prefix` (use \<team>-\<number> eg: project_prefix: team-2)
     - `resource_owner` (use \<team>-\<number> eg: resource_owner: team-2)
     - `useremail` (use platform ops persona email)
@@ -67,12 +63,14 @@ sops `ef.env.demo.yaml`
     - `volterra_cloud_cred_aws`: \<cloud-cred you created before)
     - `domain_name`: (use \<team>-\<number>.sales-demo.f5demos.com eg: team-2.sales-demo.f5demos.com)
 
+4. 
+
 ### Observations
 
 1. Run the following:
 
   ```bash
-  terragrunt run-all apply
+  terragrunt run-all apply --terragrunt-modules-that-include ./env-setup.hcl
   ```
 
   > **Note:** When prompted, reply `n` to the prompt to proceed.
