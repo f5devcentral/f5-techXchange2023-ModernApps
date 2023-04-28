@@ -73,11 +73,11 @@ sops `ef.env.demo.yaml`
   terragrunt run-all apply --terragrunt-modules-that-include ./env-setup.hcl
   ```
 
-  > **Note:** When prompted, reply `n` to the prompt to proceed.
+  > **Note:** When prompted, reply `y` to the prompt to proceed.
 
-TODO: PK - do we really want to select `n` above?
 
-1. Review ef.input.demo.yaml values
+
+> *** Note:*** This step triggers a terraform module to create the environment variables and input variables for the rest of the lab. This is specific to the UDF environment only 
 
 ### Notable Observations
 
@@ -91,13 +91,8 @@ TODO: PK - do we really want to select `n` above?
 1. Run the following:
 
   ```bash
-  terragrunt run-all apply --terragrunt-modules-that-include ./base.hcl
+  terragrunt run-all apply --terragrunt-modules-that-include ./appstack.hcl
   ```
 
 ### Observe
 
-1. Log into AWS console (using console link and creds from UDF deployment under "Cloud Accounts")
-1. Navigate to **EC2 --> EC2 Global View --> Global Search**
-1. Type in your project_prefix to identify all the objects created with that project_prefix
-1. Log into Azure Console (custom credentials)
-1. Search for your project_prefix to identify all the objects created with that project_prefix
