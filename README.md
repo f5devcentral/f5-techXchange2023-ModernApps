@@ -8,21 +8,15 @@ F5 Distributed Cloud - Modern Apps Lab guides
 
 To setup your lab environment, read ["Getting Started"](lab_0.0.md) TODO: insert MD hyperlink
 
-## [Lab 1](lab_1.0.md) - Multi-Cloud Networking (MCN) for Modern Apps
+## [Lab 1](lab_1.0.md) - Environment setup (UDF ONLY)
 
-Explain TMDF
+### [Lab 1.1](lab_1.1.md) - Build VPC Appstack sites
 
-### [Lab 1.1](lab_1.1.md) - Build some sites
-
-Deploy ./appstack.hcl
-
-### [Lab 2.1](lab_2.1.md) - Managed k8s (mk8s)
-
-Apply App and create LB resources
+### [Lab 2.1](lab_2.1.md) - Managed K8s (mk8s)
 
 ### [Lab 2.2](lab_2.2.md) - Virtual k8s (vk8s)
 
-Create virtual site, vk8s object, create lb resources
+
 
 ## Support
 
