@@ -1,90 +1,54 @@
 # Objectives
 This lab introduces you to the strucrture of Terraform Modular Demo Framework, and illustrates deployment of an App on XC Managed K8s and XC Virtual K8s cluster.
 
-## Access the environment
-
--- Log into https://udf.f5.com 
--- Look for "Terraform Modular Demo Framework" under "Blueprints", then Deploy (use Systems Engineers cost center)
--- Go to "Deployments" --> Find the deployment, and click "Start"
+## Getting Started
 
 
-### Log into the DevBox 
+## Deploy the TechXchange UDF Blueprint 
 
-- RDP into the devbox
-    > ***Note:*** - The devbox has all necessary tools installed, so RDP is the preferred method for completing this lab.
+1. In your browser, navigate to the [Terraform Modular Demo Framework](https://udf.f5.com/b/99ed0091-30c5-4a2d-b8e0-e29574980c46#documentation) blueprint.
 
-### Observations (All Personas)
+1. Click the **Deploy** button, and deploy it in the region geographically closest to you.
 
-- Start VS Code
-- Terragrunt
-- Terraform
-- AZ CLI
-- AWS CLI
-- SOPS
+    <img src="images/udf-01.png" alt="UDF Deploy" width="600"/>
 
-## Prepare the environment for the build (Platform Ops) (share screen in breakouts as needed)
+    <img src="images/udf-02.png" alt="UDF Deploy 2" width="600"/>
 
-### Gather the required values
+1. Start the UDF deployment with the default suggested resource settings.
 
-- AWS ephemeral credentials
-- XC tenant
-- XC Volterra Token
-- XC P12 File and Password
-- XC namespace
+    <img src="images/udf-03.png" alt="UDF Resources" width="600"/>
 
-### Configure environment variables
+    <img src="images/udf-04.png" alt="UDF Resources 2" width="600"/>
 
-1. Run the following:
+## Log into the **devbox** VM in the UDF Deployment
 
-```bash
-sops `ef.env.demo.yaml`
-```
+1. If the **devbox** component is not running, start it now.
 
-1. Check the `VOLT_API_URL` value (check by manually logging in)
+1. Select the **XRDP** access method in this component.
 
-1. For `AWS_ACCESS_KEY_ID`, capture this from UDF and paste (careful not to include whitespaces/special chars)
+    <img src="images/udf-05.png" alt="UDF Component" width="600"/>
 
-1. For `AWS_SECRET_ACCESS_KEY`, capture this from UDF and paste (careful not to include whitespaces/special chars)
+    <img src="images/udf-06.png" alt="UDF XRDP Access Method" width="600"/>
 
+1. Once the RDP file downloads, open it with your Remote Desktop client of choice, usually by double-clicking on the downloaded file.
 
-### Configure input variables
+1. When prompted to login, use the credentials that are shown in the **Documentation** tab of the **devbox** UDF component.
 
-1. look for "terragrunt.hcl" in the root directory of "terraform-modular-demo-framework"
-   1. Modify the "teamname" value to match the format below:
-      1. <(first-name-initial)>.<(last name)>" (eg: j-smith for John Smith)
-   
-2. Run `sops ef.input.demo.yaml`
+## Log into F5 Distributed Cloud Console
 
-3. Modify the following variables:
-    - `project_prefix` (use \<team>-\<number> eg: project_prefix: team-2)
-    - `resource_owner` (use \<team>-\<number> eg: resource_owner: team-2)
-    - `useremail` (use platform ops persona email)
-    - `namespace` (use \<team>-\<number> eg: namespace: team-2
-    - `volterra_cloud_cred_aws`: \<cloud-cred you created before)
-    - `domain_name`: (use \<team>-\<number>.sales-demo.f5demos.com eg: team-2.sales-demo.f5demos.com)
+1. Once you started the UDF deployment, a workflow was triggered to create a user account for you in the `f5-sales-demo` tenant. You should have received an email requesting you to set your password for this account. Follow those instructions in the email.
 
-4. 
+    > **Note:** If you already have an account in the `f5-sales-demo` XC tenant, you can simply log in with your existing credentials.
 
-### Observations
+1. Once you are logged into the tenant, navigate to **Multi-Cloud App Connect**.
 
-1. Run the following:
+1. In the URL, you will find the namespace that has been randomly generated for you:
 
-  ```bash
-  terragrunt run-all apply --terragrunt-modules-that-include ./env-setup.hcl
-  ```
+    <img src="images/xc-namespace.png" alt="XC Namespace" width="800"/>
 
-  > **Note:** When prompted, reply `y` to the prompt to proceed.
+    > **Note:** If you already have an account in the `f5-sales-demo` XC tenant, you may have a personal application namespace. If not, create one now, and note its name.
+
+1. Make a note of the above namespace, as you will need it in an upcoming step.
 
 
-
-> *** Note:*** This step triggers a terraform module to create the environment variables and input variables for the rest of the lab. This is specific to the UDF environment only 
-
-### Notable Observations
-
-- XC namespace points to team name
-- Azure creds have been created and specific in the file (you created AWS creds above)
-- XC API token and Credential cert (p12) are generated ahead of time and staged in this env for you
-- AzureSPN client ID and password are generated ahead of time and staged in this env for you
-
-
-3) 
+[Continue to next section ... ](lab_1.0.md)

@@ -4,13 +4,43 @@ You will deploy a Managed K8s Cluster and AWS-VPC Appstack site, in this lab.
 
 This lab will use Terragrunt to sequentially apply terraform modules in the order specified by the dependencies stanza (defined in the terragrunt.hcl file, inside each module directory eg: aws-base-1/terragrunt.hcl)
 
-### Create AWS and Azure Base environments (NetOps)
 
-1. Run the following:
+## Trigger build of lab environment
 
-  ```bash
-  terragrunt run-all apply --terragrunt-modules-that-include ./appstack.hcl
-  ```
+1. Open a terminal and run the following command to switch to the infrastructure branch we will use for this lab:
+
+    ```bash
+    cd ~/terraform-modular-demo-framework
+    ```
+
+1. Run the following script to initiate the infrastructure build for this lab:
+
+    ```bash
+    export TF_VAR_namespace=<your xc namespace here>
+    terragrunt run-all apply --terragrunt-modules-that-include ./appstack.hcl 
+    ```
+
+    > **Note:** When prompted to apply, type `y` then enter.
+
+### PendingVerification Error
+
+If you receive a *PendingVerification* error from AWS in your Terraform output, then proceed with the following steps:
+
+1. Destroy the `aws-appstack-site` 
+
+    ```bash
+    cd aws-appstack-site-1
+    terragrunt destroy
+    ```
+
+1. Ensure your site has been removed by checking the *Multi-Cloud App Connect -> App Site List* to ensure there are no sites with your XC username.
+
+1. Run the deployment again
+
+    ```.bash
+    cd ~/terraform-modular-demo-framework
+    terragrunt run-all apply --terragrunt-modules-that-include ./appstack.hcl
+    ```
 
 ### Observe
 
@@ -19,7 +49,29 @@ This lab will use Terragrunt to sequentially apply terraform modules in the orde
 
 ![Module Grouping](./images/tgra-appstack-groups.png)
 
+## Observe
+
+1. Log into XC console
+
+2. Select Multi-cloud Network Connect --> Site Management --> AWS VPC Sites --> (Observe the state of the site - No action needed)
+
+![View VPC Site](./images/view-vpc-site.png)
+
+3. In the same menu, look for K8s Clusters, you will see the mk8s cluster object created, as follows:
+
+![](./images/k8s-object.png)
+
+4. Under "Managed K8s", Select "Overview"
+    You will observe the cluster you just create appear as a Managed K8s cluster. The status will change to green, once the VPC site is online
+
+![Managed K8s object](./images/mk8s-object.png)
+
+  > **Note:** The vpc appstack site takes over 30 mins to change to "online" state, this is expected. If you see "Applied with Errors" or "Waiting for Registration", please ping the lab instructors.
+  
+
+  If the site creation is proceeding successfully, you should see the following:
+
+![](./images/site-mgmt-waiting.png)
 
 
-
-## [Lab 1.2](lab_1.2.md) - Kubeconfig & Managed K8s
+## Next Step -> [ Kubeconfig, mK8s, vK8s, LBs ](lab_1.1.md)
