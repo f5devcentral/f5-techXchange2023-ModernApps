@@ -40,7 +40,8 @@ You should see the following groups queued up for deployment
 
 2. Select Multi-cloud Network Connect --> Site Management --> AWS VPC Sites --> (Observe the state of the site - No action needed)
 
-![View VPC Site](./images/view-vpc-site.png)
+![](./images/view-vpc-site.png)
+![](./images/site-mgmt-waiting.png)
 
 3. In the same menu, look for K8s Clusters, you will see the mk8s cluster object created, as follows:
 
