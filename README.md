@@ -12,10 +12,9 @@ To setup your lab environment, read ["Getting Started"](lab_0.0.md) TODO: insert
 
 ### [Lab 1.1](lab_1.1.md) - Build VPC Appstack sites
 
-### [Lab 2.1](lab_2.1.md) - Managed K8s (mk8s)
+### [Lab 1.2](lab_1.2.md) - Managed K8s (mk8s) & virtual K8s (vk8s)
 
-### [Lab 2.2](lab_2.2.md) - Virtual k8s (vk8s)
-
+### [Lab 1.3](lab_1.3.md) - App Deployment, LBs and Routes
 
 
 ## Support
@@ -45,3 +44,5 @@ If your employer has rights to intellectual property that you create, such as yo
 
 If you are signing on behalf of a company, you represent that you are legally entitled to grant the license recited therein.
 You represent further that each employee of the entity that submits contributions is authorized to submit such contributions on behalf of the entity pursuant to the CLA.
+
+##  [Start Lab ](lab_0.0.md)

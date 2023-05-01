@@ -1,8 +1,19 @@
-# Objectives
-This lab introduces you to the strucrture of Terraform Modular Demo Framework, and illustrates deployment of an App on XC Managed K8s and XC Virtual K8s cluster.
+# Introduction 
 
-## Getting Started
+This lab will introduce students to the Terraform-Modular-Demo-Framework, that uses Terragrunt to sequence terraform modules, and make the process of setting up a Modern App demo, __Ridiculously Easy__ 
 
+Students will perform the following steps in this lab:
+    1) Deploy a Managed K8s Cluster and AWS Appstack VPC site
+    2) Deploy a Virtual K8s cluster and Virtual Site ()
+    3) Deploy the Brewz app on both:
+       3.1) recommendations and inventory services on vk8s in a Regional Edge 
+       3.2) spa, mongo-initdb, checkout and api on mk8s in a Customer Edge
+    4) Create Origin pools for each service (except mongo-initdb) 
+    5) Create HTTPS Load Balancer with custom routes, pointing to the different services
+
+ 
+## Lab Architecture
+![](./images/Environmental-Diagram.png)
 
 ## Deploy the TechXchange UDF Blueprint 
 
@@ -10,9 +21,12 @@ This lab introduces you to the strucrture of Terraform Modular Demo Framework, a
 
 1. Click the **Deploy** button, and deploy it in the region geographically closest to you.
 
+
     <img src="images/udf-01.png" alt="UDF Deploy" width="600"/>
 
+
     <img src="images/udf-02.png" alt="UDF Deploy 2" width="600"/>
+
 
 1. Start the UDF deployment with the default suggested resource settings.
 
@@ -51,20 +65,24 @@ This lab introduces you to the strucrture of Terraform Modular Demo Framework, a
 1. Make a note of the above namespace, as you will need it the upcoming step.
 
 
-1. Open a terminal and run the following command to switch to the infrastructure branch we will use for this lab:
+1. Open a terminal and run the following command  
 
     ```bash
     cd ~/terraform-modular-demo-framework
     ```
 
-1. Run the following script to initiate the infrastructure build for this lab: (***Note:*** Copy-paste will not work)
+1. Run the following script to initiate the infrastructure build for this lab: (***Note:*** ----> Copy-paste will not work)
 
     ```bash
     export TF_VAR_namespace=<your xc namespace here>
+    ```
+
+1. Next, run the following command to start the UDF environment setup
+    ```bash
     terragrunt run-all apply --terragrunt-modules-that-include ./env-setup.hcl 
     ```
 
-    > **Note:** When prompted to apply, type `y` then enter.
+    > **Note:** When prompted to apply, type `y` then enter. If this fails, stop and alert a lab instructor immediately
 
 
 [Continue to next section ... ](lab_1.0.md)

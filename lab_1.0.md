@@ -1,12 +1,10 @@
 # Outline
 
-You will deploy a Managed K8s Cluster and AWS-VPC Appstack site, in this section
-
-Terragrunt will sequentially apply terraform modules in the order specified by the dependencies stanza (defined in the terragrunt.hcl file, inside each module directory eg: aws-base-1/terragrunt.hcl)
+In this section, we deploy a Managed K8s Cluster and AWS-VPC-site with an Appstack instance. The underlying AWS base environment will also be created
 
 ## Trigger build of lab environment
 
-1. Open a terminal and run the following command to switch to the infrastructure branch we will use for this lab:
+1. Open a terminal and run the following command:
 
     ```bash
     cd ~/terraform-modular-demo-framework
@@ -18,38 +16,22 @@ Terragrunt will sequentially apply terraform modules in the order specified by t
     terragrunt run-all apply --terragrunt-modules-that-include ./appstack.hcl 
     ```
 You should see the following groups queued up for deployment
-![](./images/appstack-group.png)
+![](./images/appstack-group-final.png)
 
+> **Note:** When prompted to apply, type `y` then enter.
 
-    > **Note:** When prompted to apply, type `y` then enter.
+### Group 1 module definitions:  
 
+- aws-base-1 --> deploys AWS VPCs, Subnets, Internet Gateways, Route Tables, EIPs, NAT Gateways, Security Groups, etc  
+- mk8s-cluster-1 --> Deploys the XC Managed K8s Cluster object. This step is required BEFORE the AWS-VPC site is created with an Appstack node
 
-### PendingVerification Error
+### Group 2 module definitions:  
 
-If you receive a *PendingVerification* error from AWS in your Terraform output, then proceed with the following steps:
+- aws-appstack-site-1 --> Tells XC to deploy an AWS-VPC site with an Appstack node, using outputs from the aws-base-1 module
 
-1. Destroy the `aws-appstack-site` 
+> ***Note:*** If you see *PendingVerification Error*, go to [Pending Verification Reovery](Pend-ver.md) otherwise, proceed. 
 
-    ```bash
-    cd aws-appstack-site-1
-    terragrunt destroy
-    ```
-
-1. Ensure your site has been removed by checking the *Multi-Cloud App Connect -> App Site List* to ensure there are no sites with your XC username.
-
-1. Run the deployment again
-
-    ```.bash
-    cd ~/terraform-modular-demo-framework
-    terragrunt run-all apply --terragrunt-modules-that-include ./appstack.hcl
-    ```
-
-### Observe
-
-1) Terragrunt will now sequentially apply the various terraform modules, in the order specified by the dependencies stanza (defined in the terragrunt.hcl file, inside each module directory eg: aws-base-1/terragrunt.hcl)
-2) There are pre-checks and post-checks built into the framework, to check status of objects before proceeding
-
-## Observe
+## Verify
 
 1. Log into XC console
 
@@ -74,4 +56,4 @@ If you receive a *PendingVerification* error from AWS in your Terraform output, 
 ![](./images/site-mgmt-waiting.png)
 
 
-## Next Step -> [ Kubeconfig, mK8s, vK8s, LBs ](lab_1.1.md)
+## Next Step -> [ vK8s & Kubeconfigs](lab_1.1.md)
