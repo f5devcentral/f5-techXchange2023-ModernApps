@@ -1,6 +1,6 @@
 # Virtual K8s and Kubeconfigs
 
-In the previous step, the underlying environment was built for appstack. Once the AWS-VPC site with Appstack is alive, you should see the following: 
+In the previous step, the underlying environment and Managed K8s cluster were built on an Appstack node. Once the AWS-VPC site with Appstack is alive, you should see the following:
 
 ![](./images/mk8s-alive.png)
 

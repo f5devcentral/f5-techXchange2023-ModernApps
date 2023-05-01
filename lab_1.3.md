@@ -1,5 +1,6 @@
 
-### Deploy select Brewz manifests on vK8s
+## Deploy select Brewz manifests on vK8s
+Now that all the required infrastructure is available, it's time to deploy Brewz
 
 In a terminal, type the following command
   
@@ -11,7 +12,9 @@ The output should look as follows
 
 ![](/images/brewz-group.png)
 
-This module will perform the following:
+### Group 1 module definition:  
+ 
+The *appstack-lab.hcl* group will perform the following:
 1) Deploy recommendations and inventory services to the vk8s cluster 
 2) Deploy spa, mongo-initdb, checkout and api services to the mk8s cluster
 3) Create the origin pools pointing to each K8s service, selecting the site/vsite reference depending on the cluster
@@ -45,16 +48,4 @@ A quick way to view where each service was deployed on the XC Console is to go t
 Now Click on Origins, and observe the "Site" column, to identify which service was deployed on which cluster
 ![](./images/lb-origins-locations.png)
 
-```mermaid
-%% Example of sequence diagram
-  sequenceDiagram
-    Alice->>Bob: Hello Bob, how are you?
-    alt is sick
-    Bob->>Alice: Not so good :(
-    else is well
-    Bob->>Alice: Feeling fresh like a daisy
-    end
-    opt Extra response
-    Bob->>Alice: Thanks for asking
-    end
-```
+## Next Step  [Ridiculously Easy Demos](lab_1.4.md)

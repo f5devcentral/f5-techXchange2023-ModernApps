@@ -1,10 +1,10 @@
 # Deploying Brewz on Virtual K8s and Managed K8s   
-By now, both MK8s and VK8s clusters should be *ready/alive* and a kubeconfig will have been generated for both clusters.
+By now, both MK8s and VK8s clusters should be *ready/alive* and a kubeconfig will have been generated and downloaded for both clusters.
 > ***Note:*** Kubeconfig Locations:   
 > Mk8s kubeconfig --> /home/ubuntu/.kube/config  
 > Vk8s kubeconfig --> /home/ubuntu/xc-re-vk8s-kubeconfig
 
-You can verify your access to each cluster use kubectl commands. 
+You can verify your access to each cluster use kubectl commands.
 
 ## Managed K8s Access & API Resources  
 
@@ -49,5 +49,4 @@ Review the API resources available to the Managed K8s Cluster
 
 > ***Note:*** You will observe that the Managed K8s cluster has a much larger set of API resources available, compared to the Virtual K8s cluster. This is because the XC Managed K8s feature provides a full K8s cluster in a site, while the XC Virtual K8s feature only provides a namespace, that can span multiple sites (including an MK8s site)  
 
-
-## Next Step  [Cleanup](lab_1.3.md)
+## Next Step  [Brewz App, LB & Routes](lab_1.3.md)

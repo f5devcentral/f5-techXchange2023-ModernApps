@@ -8,13 +8,15 @@ F5 Distributed Cloud - Modern Apps Lab guides
 
 To setup your lab environment, read ["Getting Started"](lab_0.0.md) TODO: insert MD hyperlink
 
-## [Lab 1](lab_1.0.md) - Environment setup (UDF ONLY)
+### [Setup](lab_0.0.md) - Lab Architecture & setup (UDF ONLY)
 
 ### [Lab 1.1](lab_1.1.md) - Build VPC Appstack sites
 
 ### [Lab 1.2](lab_1.2.md) - Managed K8s (mk8s) & virtual K8s (vk8s)
 
 ### [Lab 1.3](lab_1.3.md) - App Deployment, LBs and Routes
+
+### [Lab 1.4](lab_1.4.md) - _*Ridiculously Easy*_ XC Demos
 
 
 ## Support

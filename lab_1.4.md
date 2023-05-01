@@ -12,6 +12,18 @@ The output looks as follows:
 
 ![](./images/tgrd-appstack-lab.png)
 
-Carefully observe the groups and sequences in which the modules will be applied to destroy the environment. Terragrunt provides this flexibility to perform a full destruction using a single command. 
+Carefully observe the groups and sequences in which the modules will be applied to destroy the environment. Terragrunt provides this flexibility to perform a full destruction using a single command.
 
-> ***Note:*** If you want a *Ridiculously easy* method to reproduce this demo, just replace "destroy" with "apply" in the  command above, following the env-setup step in [Lab 0.0](lab_0.0.md)
+# Lab Complete
+
+> ***Note:*** For a *Ridiculously easy* method to reproduce this demo within UDF, use the steps below 
+
+* Step 1 - Environmental Setup
+  ```bash
+  terragrunt run-all apply --terragrunt-modules-that-include ./env-setup.hcl
+  ```
+* Step 2 - Deploy Everything!
+
+```bash
+   terragrunt run-all apply --terragrunt-modules-that-include ./appstack-lab.hcl
+```

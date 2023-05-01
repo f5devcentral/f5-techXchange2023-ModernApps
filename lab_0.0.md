@@ -1,15 +1,15 @@
 # Introduction 
 
-This lab will introduce students to the Terraform-Modular-Demo-Framework, that uses Terragrunt to sequence terraform modules, and make the process of setting up a Modern App demo, __Ridiculously Easy__ 
+This lab explains the Terraform-Modular-Demo-Framework, that uses Terragrunt to sequence interdependent terraform modules, and make the process of setting up a Distributed Cloud Modern App demo, __Ridiculously Easy__ 
 
-Students will perform the following steps in this lab:
-    1) Deploy a Managed K8s Cluster and AWS Appstack VPC site
-    2) Deploy a Virtual K8s cluster and Virtual Site ()
-    3) Deploy the Brewz app on both:
-       3.1) recommendations and inventory services on vk8s in a Regional Edge 
-       3.2) spa, mongo-initdb, checkout and api on mk8s in a Customer Edge
-    4) Create Origin pools for each service (except mongo-initdb) 
-    5) Create HTTPS Load Balancer with custom routes, pointing to the different services
+The following high-level steps need to be performed for this lab  
+* Deploy a Managed K8s Cluster and AWS Appstack VPC site  
+* Deploy a Virtual K8s cluster and Virtual Site ()  
+* Deploy the Brewz app on both: 
+  + recommendations and inventory services on vk8s in a Regional Edge
+  + spa, mongo-initdb, checkout and api on mk8s in a Customer Edge 
+* Create Origin pools for each service (except mongo-initdb) 
+* Create HTTPS Load Balancer with custom routes, pointing to the different services
 
  
 ## Lab Architecture
