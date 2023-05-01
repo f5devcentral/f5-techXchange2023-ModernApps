@@ -23,7 +23,6 @@ Carefully observe the groups and sequences in which the modules will be applied 
   terragrunt run-all apply --terragrunt-modules-that-include ./env-setup.hcl
   ```
 * Step 2 - Deploy Everything!
-
-```bash
+  ```bash
    terragrunt run-all apply --terragrunt-modules-that-include ./appstack-lab.hcl
-```
+  ```

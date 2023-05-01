@@ -6,7 +6,7 @@ F5 Distributed Cloud - Modern Apps Lab guides
 
 ## Getting Started
 
-To setup your lab environment, read ["Getting Started"](lab_0.0.md) TODO: insert MD hyperlink
+To setup your lab environment, read ["Getting Started"](lab_0.0.md)
 
 ### [Setup](lab_0.0.md) - Lab Architecture & setup (UDF ONLY)
 

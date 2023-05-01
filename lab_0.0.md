@@ -12,9 +12,6 @@ The following high-level steps need to be performed for this lab
 * Create HTTPS Load Balancer with custom routes, pointing to the different services
 
  
-## Lab Architecture
-![](./images/Environmental-Diagram.png)
-
 ## Deploy the TechXchange UDF Blueprint 
 
 1. In your browser, navigate to the [Terraform Modular Demo Framework](https://udf.f5.com/b/99ed0091-30c5-4a2d-b8e0-e29574980c46#documentation) blueprint.

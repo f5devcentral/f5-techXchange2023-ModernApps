@@ -1,6 +1,9 @@
 # Outline
 
-In this section, we deploy a Managed K8s Cluster and AWS-VPC-site with an Appstack instance. The underlying AWS base environment will also be created
+In this section, we deploy a Managed K8s Cluster and AWS-VPC-site with an Appstack instance. The underlying AWS base environment will also be created, as shown in the architecture below
+
+![](./images/Environmental-Diagram.png)
+
 
 ## Trigger build of lab environment
 
@@ -29,7 +32,7 @@ You should see the following groups queued up for deployment
 
 - aws-appstack-site-1 --> Tells XC to deploy an AWS-VPC site with an Appstack node, using outputs from the aws-base-1 module
 
-> ***Note:*** If you see *PendingVerification Error*, go to [Pending Verification Reovery](Pend-ver.md) otherwise, proceed. 
+> ***Note:*** If you see *PendingVerification Error*, go to [Pending Verification Recovery](Pend-ver.md) otherwise, proceed. 
 
 ## Verify
 
@@ -56,4 +59,4 @@ You should see the following groups queued up for deployment
 ![](./images/site-mgmt-waiting.png)
 
 
-## Next Step -> [ vK8s & Kubeconfigs](lab_1.1.md)
+## Next Step -> [VK8s & Kubeconfigs](lab_1.1.md)

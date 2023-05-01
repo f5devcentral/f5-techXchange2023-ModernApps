@@ -9,6 +9,7 @@ In the previous step, the underlying environment and Managed K8s cluster were bu
   In a terminal, type the following command
   
   ```bash
+    cd ~/terraform-modular-demo-framework
     terragrunt run-all apply --terragrunt-modules-that-include ./virtual-k8s.hcl
   ```
 The terragrunt module grouping looks as follows:
