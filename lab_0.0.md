@@ -48,7 +48,23 @@ This lab introduces you to the strucrture of Terraform Modular Demo Framework, a
 
     > **Note:** If you already have an account in the `f5-sales-demo` XC tenant, you may have a personal application namespace. If not, create one now, and note its name.
 
-1. Make a note of the above namespace, as you will need it in an upcoming step.
+1. Make a note of the above namespace, as you will need it the upcoming step.
+
+
+1. Open a terminal and run the following command to switch to the infrastructure branch we will use for this lab:
+
+    ```bash
+    cd ~/terraform-modular-demo-framework
+    ```
+
+1. Run the following script to initiate the infrastructure build for this lab: (***Note:*** Copy-paste will not work)
+
+    ```bash
+    export TF_VAR_namespace=<your xc namespace here>
+    terragrunt run-all apply --terragrunt-modules-that-include ./env-setup.hcl 
+    ```
+
+    > **Note:** When prompted to apply, type `y` then enter.
 
 
 [Continue to next section ... ](lab_1.0.md)

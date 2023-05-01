@@ -1,9 +1,8 @@
 # Outline
 
-You will deploy a Managed K8s Cluster and AWS-VPC Appstack site, in this lab. 
+You will deploy a Managed K8s Cluster and AWS-VPC Appstack site, in this section
 
-This lab will use Terragrunt to sequentially apply terraform modules in the order specified by the dependencies stanza (defined in the terragrunt.hcl file, inside each module directory eg: aws-base-1/terragrunt.hcl)
-
+Terragrunt will sequentially apply terraform modules in the order specified by the dependencies stanza (defined in the terragrunt.hcl file, inside each module directory eg: aws-base-1/terragrunt.hcl)
 
 ## Trigger build of lab environment
 
@@ -13,14 +12,17 @@ This lab will use Terragrunt to sequentially apply terraform modules in the orde
     cd ~/terraform-modular-demo-framework
     ```
 
-1. Run the following script to initiate the infrastructure build for this lab:
+1. Run the following command for this lab:
 
     ```bash
-    export TF_VAR_namespace=<your xc namespace here>
     terragrunt run-all apply --terragrunt-modules-that-include ./appstack.hcl 
     ```
+You should see the following groups queued up for deployment
+![](./images/appstack-group.png)
+
 
     > **Note:** When prompted to apply, type `y` then enter.
+
 
 ### PendingVerification Error
 
@@ -46,8 +48,6 @@ If you receive a *PendingVerification* error from AWS in your Terraform output, 
 
 1) Terragrunt will now sequentially apply the various terraform modules, in the order specified by the dependencies stanza (defined in the terragrunt.hcl file, inside each module directory eg: aws-base-1/terragrunt.hcl)
 2) There are pre-checks and post-checks built into the framework, to check status of objects before proceeding
-
-![Module Grouping](./images/tgra-appstack-groups.png)
 
 ## Observe
 
