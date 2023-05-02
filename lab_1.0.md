@@ -59,5 +59,16 @@ You should see the following groups queued up for deployment
 
 ![](./images/site-mgmt-waiting.png)
 
+<br/>
+<br/>
+
+
+<img src="images/stop.jpg" alt="stop" width="200"/>
+
+***You must wait for the above step to complete before proceeding with the lab***
+
+<br/>
+<br/>
+
 
 ## Next Step -> [VK8s & Kubeconfigs](lab_1.1.md)

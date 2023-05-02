@@ -1,8 +1,13 @@
-# Deploying Brewz on Virtual K8s and Managed K8s   
+# Deploying Brewz on Virtual K8s and Managed K8s
+
 By now, both MK8s and VK8s clusters should be *ready/alive* and a kubeconfig will have been generated and downloaded for both clusters.
+<br/>
+<br/>
 > ***Note:*** Kubeconfig Locations:   
 > Mk8s kubeconfig --> /home/ubuntu/.kube/config  
 > Vk8s kubeconfig --> /home/ubuntu/xc-re-vk8s-kubeconfig
+<br/>
+<br/>
 
 You can verify your access to each cluster use kubectl commands.
 

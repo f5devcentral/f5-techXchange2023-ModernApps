@@ -1,6 +1,6 @@
 # Virtual K8s and Kubeconfigs
 
-In the previous step, the underlying environment and Managed K8s cluster were built on an Appstack node. Once the AWS-VPC site with Appstack is alive, you should see the following:
+In the previous step, the underlying environment and Managed K8s cluster were built on an Appstack node. Once the AWS-VPC site with Appstack is alive, you should see the following (Multi-Cloud Networking --> Managed K8s --> Overview --> (select your appstack-vpc Mk8s environment)
 
 ![](./images/mk8s-alive.png)
 
@@ -24,6 +24,10 @@ The terragrunt module grouping looks as follows:
 ### Group 2 module definitions:  
 
 - xc-re-vk8s-kubeconfig --> Gets the kubeconfig from the XC Virtual K8s Cluster. This module also checks to see if the Cluster is *__Ready__*
+
+Learn more about Virtual K8s [here](https://docs.cloud.f5.com/docs/ves-concepts/dist-app-mgmt)
+
+Learn more about Managed K8s [here](https://docs.cloud.f5.com/docs/services/app-stack/managed-kubernetes)
 
 
 ## Next Step  [Deploy Brewz](lab_1.2.md)
