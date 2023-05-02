@@ -2,11 +2,11 @@
 
 ## Overview
 
-F5 Distributed Cloud - Modern Apps Lab guides
+F5 Distributed Cloud - Modern Apps Day 1 Lab guide
 
 ## Getting Started
 
-To setup your lab environment, read ["Getting Started"](lab_0.0.md)
+There are 4 modules in this lab, as shown below. Please follow this seqence.
 
 ### [Setup](lab_0.0.md) - Lab Architecture & setup (UDF ONLY)
 
@@ -16,8 +16,7 @@ To setup your lab environment, read ["Getting Started"](lab_0.0.md)
 
 ### [Lab 1.3](lab_1.3.md) - App Deployment, LBs and Routes
 
-### [Lab 1.4](lab_1.4.md) - _*Ridiculously Easy*_ XC Demos
-
+### [Lab 1.4](lab_1.4.md) - *__Ridiculously Easy__* XC Demos
 
 ## Support
 
