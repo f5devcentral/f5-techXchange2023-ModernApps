@@ -1,34 +1,30 @@
-# Introduction 
+# Introduction
 
-This lab leverages the Terraform Modular Demo Framework, that uses Terragrunt to sequence interdependent terraform modules, and make the process of setting up a Distributed Cloud Modern App demo, __Ridiculously Easy__ 
-
+This lab leverages the Terraform Modular Demo Framework, that uses Terragrunt to sequence interdependent terraform modules, and make the process of setting up a Distributed Cloud Modern App demo, __Ridiculously Easy__
 
 ## Use Case:
-Brewz is an ecommerce application that provides a retail storefront for customers, to purchase coffee. Of the 6 microservices that make up Brewz, there is a desire to run the *recommendations* and *inventory* services closer to customer locations, while the remaining services should be hosted on a Kubernetes cluster, that can be quickly and easily deployed in multiple locations as demand for coffee grows. F5 Distributed Cloud Regional Edges provide the capability to deploy the 2x services closer to customers, to reduce latency and improve availability, while XC Appstack provides a repeatable K8s platform, that can be platform agnostic, and host microservices, while being managed through the centralized XC Console. The XC security stack is an added bonus to this use case (we will not be covering XC WAAP in this lab)  
+
+Brewz is an ecommerce application that provides a retail storefront for customers, to purchase coffee. Of the 6 microservices that make up Brewz, there is a desire to run the *recommendations* and *inventory* services closer to customer locations, while the remaining services should be hosted on a Kubernetes cluster, that can be quickly and easily deployed in multiple locations as demand for coffee grows. F5 Distributed Cloud Regional Edges provide the capability to deploy the 2x services closer to customers, to reduce latency and improve availability, while XC App Stack provides a repeatable K8s platform, that can be platform agnostic, and host microservices, while being managed through the centralized XC Console. The XC security stack is an added bonus to this use case (we will not be covering XC WAAP in this lab).
 
 ## What components do we need to achieve this?
 
-* Managed K8s Cluster and AWS Appstack VPC site  
-* Virtual K8s cluster and Virtual Site ()  
-* the Brewz app: 
+* Managed K8s Cluster and AWS App Stack VPC site
+* Virtual K8s cluster and Virtual Site
+* The Brewz app:
   + *recommendations* and *inventory* services on Virtual K8s in a Regional Edge
-  + *spa, mongo-initdb, checkout* and *api* on Managed K8s in a Customer Edge (AWS environment) 
-* Origin pools for each service (except mongo-initdb) 
+  + *spa, mongodb, checkout* and *core api* on Managed K8s in a Customer Edge (AWS environment)
+* Origin pools for each service (except mongodb)
 * HTTPS Load Balancer with custom routes, pointing to the different services
 
- 
-## Deploy the Terraform Modular Demo Framework 
+## Deploy the Terraform Modular Demo Framework
 
 1. In your browser, navigate to the [Terraform Modular Demo Framework](https://udf.f5.com/b/99ed0091-30c5-4a2d-b8e0-e29574980c46#documentation) blueprint.
 
 1. Click the **Deploy** button, and deploy it in the region geographically closest to you.
 
-
     <img src="images/udf-01.png" alt="UDF Deploy" width="600"/>
 
-
     <img src="images/udf-02.png" alt="UDF Deploy 2" width="600"/>
-
 
 1. Start the UDF deployment with the default suggested resource settings.
 
@@ -45,18 +41,16 @@ Brewz is an ecommerce application that provides a retail storefront for customer
 > ***Note:*** If your keyboard layout causes copy/paste or navigation issues inside the RDP session, please open the [Lab Guide](https://) inside the RDP
 > <br/>
 > <br/>
-> ***Mac Users:*** Please use the Microsoft RDP client for MacOS,  for optimal RDP experience 
+> ***Mac Users:*** Please use the Microsoft RDP client for MacOS for optimal RDP experience
 <br/>     
     <img src="images/udf-05.png" alt="UDF Component" width="600"/>
    <img src="images/udf-06.png" alt="UDF XRDP Access Method" width="600"/>
 
 > ***Note:*** If you prefer to use the SSH utility in UDF, Follow this procedure:
 >1. Connect to ssh
->1. Type screen before running your commands
-    - If you get disconnected from your SSH session, reconnect to ssh, then type screen -R to resume your running terminal session.
- 
- <br/>
+>1. Type `screen` before running your commands. If you get disconnected from your SSH session, reconnect to ssh, then type `screen -R` to resume your running terminal session.
 
+ <br/>
 
 1. Once the RDP file downloads, open it with your Remote Desktop client of choice, usually by double-clicking on the downloaded file.
 
@@ -93,7 +87,6 @@ Brewz is an ecommerce application that provides a retail storefront for customer
 
 1. Make a note of the above namespace, as you will need it the upcoming step.
 
-
 1. Open a terminal and run the following command  
 
     ```bash
@@ -106,12 +99,12 @@ Brewz is an ecommerce application that provides a retail storefront for customer
     export TF_VAR_namespace=<your xc namespace here>
     ```
 
-1. Next, run the following command to start the UDF environment setup
+1. Next, run the following command to start the UDF environment setup:
+
     ```bash
     terragrunt run-all apply --terragrunt-modules-that-include ./env-setup.hcl 
     ```
 
     > **Note:** When prompted to apply, type `y` then enter. If this fails, stop and alert a lab instructor immediately
 
-
-[Continue to next section ... ](lab_1.0.md)
+[Continue to next section...](lab_1.0.md)
