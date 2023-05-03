@@ -1,18 +1,23 @@
 # Introduction 
 
-This lab explains the Terraform-Modular-Demo-Framework, that uses Terragrunt to sequence interdependent terraform modules, and make the process of setting up a Distributed Cloud Modern App demo, __Ridiculously Easy__ 
+This lab leverages the Terraform Modular Demo Framework, that uses Terragrunt to sequence interdependent terraform modules, and make the process of setting up a Distributed Cloud Modern App demo, __Ridiculously Easy__ 
 
-The following high-level steps need to be performed for this lab  
-* Deploy a Managed K8s Cluster and AWS Appstack VPC site  
-* Deploy a Virtual K8s cluster and Virtual Site ()  
-* Deploy the Brewz app on both: 
-  + recommendations and inventory services on vk8s in a Regional Edge
-  + spa, mongo-initdb, checkout and api on mk8s in a Customer Edge 
-* Create Origin pools for each service (except mongo-initdb) 
-* Create HTTPS Load Balancer with custom routes, pointing to the different services
+
+## Use Case:
+Brewz is an ecommerce application that provides a retail storefront for customers, to purchase coffee. Of the 6 microservices that make up Brewz, there is a desire to run the *recommendations* and *inventory* services closer to customer locations, while the remaining services should be hosted on a Kubernetes cluster, that can be quickly and easily deployed in multiple locations as demand for coffee grows. F5 Distributed Cloud Regional Edges provide the capability to deploy the 2x services closer to customers, to reduce latency and improve availability, while XC Appstack provides a repeatable K8s platform, that can be platform agnostic, and host microservices, while being managed through the centralized XC Console. The XC security stack is an added bonus to this use case (we will not be covering XC WAAP in this lab)  
+
+## What components do we need to achieve this?
+
+* Managed K8s Cluster and AWS Appstack VPC site  
+* Virtual K8s cluster and Virtual Site ()  
+* the Brewz app: 
+  + *recommendations* and *inventory* services on Virtual K8s in a Regional Edge
+  + *spa, mongo-initdb, checkout* and *api* on Managed K8s in a Customer Edge (AWS environment) 
+* Origin pools for each service (except mongo-initdb) 
+* HTTPS Load Balancer with custom routes, pointing to the different services
 
  
-## Deploy the TechXchange UDF Blueprint 
+## Deploy the Terraform Modular Demo Framework 
 
 1. In your browser, navigate to the [Terraform Modular Demo Framework](https://udf.f5.com/b/99ed0091-30c5-4a2d-b8e0-e29574980c46#documentation) blueprint.
 
@@ -37,9 +42,21 @@ The following high-level steps need to be performed for this lab
 
 1. Select the **XRDP** access method in this component.
 
+> ***Note:*** If your keyboard layout causes copy/paste or navigation issues inside the RDP session, please open the [Lab Guide](https://) inside the RDP
+> <br/>
+> <br/>
+> ***Mac Users:*** Please use the Microsoft RDP client for MacOS,  for optimal RDP experience 
+<br/>     
     <img src="images/udf-05.png" alt="UDF Component" width="600"/>
+   <img src="images/udf-06.png" alt="UDF XRDP Access Method" width="600"/>
 
-    <img src="images/udf-06.png" alt="UDF XRDP Access Method" width="600"/>
+> ***Note:*** If you prefer to use the SSH utility in UDF, Follow this procedure:
+>1. Connect to ssh
+>1. Type screen before running your commands
+    - If you get disconnected from your SSH session, reconnect to ssh, then type screen -R to resume your running terminal session.
+ 
+ <br/>
+
 
 1. Once the RDP file downloads, open it with your Remote Desktop client of choice, usually by double-clicking on the downloaded file.
 
@@ -51,13 +68,28 @@ The following high-level steps need to be performed for this lab
 
     > **Note:** If you already have an account in the `f5-sales-demo` XC tenant, you can simply log in with your existing credentials.
 
+1. If you are prompted for an XC domain, enter `f5-sales-demo` and click **Next**.
+
+    <img src="images/xc-domain.png" alt="XC Domain" width="500"/>
+
+1. Login using your email and the password you just set:
+
+    <img src="images/xc-login.png" alt="XC Login" width="500"/>
+
+1. If prompted, review and accept the **Terms of Service** and **Privacy Policy**.
+
+1. When asked to identify yourself, select all the checkboxes for personas, and click **Next**.
+
+1. Click `Advanced` and click **Get Started**.
+
+
 1. Once you are logged into the tenant, navigate to **Multi-Cloud App Connect**.
 
 1. In the URL, you will find the namespace that has been randomly generated for you:
 
     <img src="images/xc-namespace.png" alt="XC Namespace" width="800"/>
 
-    > **Note:** If you already have an account in the `f5-sales-demo` XC tenant, you may have a personal application namespace. If not, create one now, and note its name.
+    > **Note:** If you already have an account in the `f5-sales-demo` XC tenant, you may have a personal application namespace. If not, create one now, and note its name. You will not receive an email to register.
 
 1. Make a note of the above namespace, as you will need it the upcoming step.
 

@@ -14,20 +14,20 @@ The output should look as follows
 ### Group 1 module definition:  
  
 The *appstack-lab.hcl* group will perform the following:
-1) Deploy recommendations and inventory services to the vk8s cluster 
-2) Deploy spa, mongo-initdb, checkout and api services to the mk8s cluster
+1) Deploy recommendations and inventory services to the Vk8s cluster 
+2) Deploy spa, mongo-initdb, checkout and api services to the Mk8s cluster
 3) Create the origin pools pointing to each K8s service, selecting the site/vsite reference depending on the cluster
 4) Create an HTTPS Load Balancer, with custom routes pointing to the origin pools created above
 <br/>
 <br/>
 
-The intended outcome of the above steps should result in this architecture 
+The outcome of the above steps will result in this deployment architecture 
 
 ![](./images/Brewz-Architecture.png)
 
 
 ### Review Objects/Routes
-Within a few minutes, you will see a HTTP Load Balancer appear in your XC namespace
+Within a few minutes, you will see a HTTP Load Balancer appear in your XC namespace. In the XC Console, click on *Distributed Apps* -> Manage -> HTTP Load Balancers
 <br/>
 <br/>
 ![](./images/lb-object.png)

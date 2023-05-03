@@ -21,7 +21,7 @@ In this section, we deploy a Managed K8s Cluster and AWS-VPC-site with an Appsta
 You should see the following groups queued up for deployment
 ![](./images/appstack-group-final.png)
 
-> **Note:** When prompted to apply, type `y` then enter.
+> **Note:** When prompted to apply, type `y` then enter. Once the script triggers, do not interrupt the terminal session until it finishes and returns to the prompt
 
 ### Group 1 module definitions:  
 
