@@ -18,7 +18,7 @@ The output looks as follows:
 <br/>
 <br/>
 
-> ***Note:*** If you see the errors, they are most likely due to XC API throttling or timeouts. Just re-attempt the previous step, and type 'y' when prompted. If you are unable to get a clean destroy, please make the lab instructors aware.
+> ***Note:*** If you see the errors, they are likely due to XC API throttling or timeouts. Please re-attempt the previous step, and type 'y' when prompted. If you are unable to get a clean destroy, please make the lab instructors aware.
 <br/>
 <br/>
 
