@@ -10,7 +10,7 @@ There are 4 modules in this lab, as shown below. Please follow this seqence.
 
 ### [Setup](lab_0.0.md) - Lab Architecture & setup (UDF ONLY)
 
-### [Lab 1.1](lab_1.1.md) - Build VPC Appstack sites
+### [Lab 1.1](lab_1.1.md) - Build VPC App Stack sites
 
 ### [Lab 1.2](lab_1.2.md) - Managed K8s (mk8s) & virtual K8s (vk8s)
 
