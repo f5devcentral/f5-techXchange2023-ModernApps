@@ -1,30 +1,35 @@
 ### Cleanup Lab Environment
 
-## Trigger destroy of lab environment
+## Lab Teardown
 
-1. In a terminal run the following command:
+1. In the lab **devbox** VM, open a terminal and run the following script to initiate teardown of the infrastructure built for this lab:
+
     ```bash
-    terragrunt run-all destroy --terragrunt-modules-that-include ./appstack-lab.hcl
+    cd ~/terraform-modular-demo-framework
+    ./appstack-lab/teardown-lab-environment.sh 
     ```
 
+    > **Note:** Ensure that the script has completed successfully before disconnecting from the VM. If you see *API Timeout exceeded* errors, please wait 3-5 mins, and re-attempt teardown script. This error is due to rate limiting by the XC API. If you are unable to get a clean destroy, please make the lab instructors aware.
 
-The output looks as follows:
 <br/>
 <br/>
-![](./images/tgrd-appstack-lab.png)
-<br/>
-<br/>
-Carefully observe the groups and sequences in which the modules will be applied to destroy the environment. Terragrunt provides this flexibility to perform a full destruction using a single command.
+ Terragrunt provides this flexibility to perform a full destruction, in the reverse sequence of deployment, using a single command.
 <br/>
 <br/>
 
-> ***Note:*** If you see the errors, they are most likely due to XC API throlling or timeouts. Just re-attempt the previous step, and type 'y' when prompted. If you are unable to get a clean destroy, please make the lab instructors aware.
+2. Shut down and delete the UDF deployment.
+
+## END OF LAB
+
+
+
+
 <br/>
 <br/>
 
 # Lab Complete
 
-> ***Note:*** For a *__Ridiculously easy__* method to reproduce this demo within UDF, use the steps below 
+>  For a *__Ridiculously easy__* method to reproduce this demo within UDF, use the steps below 
 
 <br/>
 <br/>
@@ -43,7 +48,7 @@ Carefully observe the groups and sequences in which the modules will be applied 
 <br/>
 
 * Step 4 - Destroy Everything! 
-   ```bash
-   terragrunt run-all destroy --terragrunt-modules-that-include ./appstack-lab.hcl
-   terragrunt run-all destroy --terragrunt-modules-that-include ./env-setup.hcl
-  ```
+```bash
+    cd ~/terraform-modular-demo-framework
+    ./appstack-lab/teardown-lab-environment.sh 
+```
