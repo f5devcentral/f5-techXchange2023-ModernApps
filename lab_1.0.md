@@ -1,9 +1,8 @@
 # Outline
 
-In this section, we deploy a Managed K8s Cluster and AWS-VPC-site with an Appstack instance. The underlying AWS base environment will also be created, as shown in the architecture below
+In this section, we deploy a Managed K8s Cluster and AWS-VPC-site with an App Stack instance. The underlying AWS base environment will also be created, as shown in the architecture below
 
 ![](./images/Environmental-Diagram.png)
-
 
 ## Trigger build of lab environment
 
@@ -18,27 +17,28 @@ In this section, we deploy a Managed K8s Cluster and AWS-VPC-site with an Appsta
     ```bash
     terragrunt run-all apply --terragrunt-modules-that-include ./appstack.hcl 
     ```
+
 You should see the following groups queued up for deployment
 ![](./images/appstack-group-final.png)
 
 > **Note:** When prompted to apply, type `y` then enter. Once the script triggers, do not interrupt the terminal session until it finishes and returns to the prompt
 
-### Group 1 module definitions:  
+### Group 1 module definitions:
 
-- aws-base-1 --> deploys AWS VPCs, Subnets, Internet Gateways, Route Tables, EIPs, NAT Gateways, Security Groups, etc  
-- mk8s-cluster-1 --> Deploys the XC Managed K8s Cluster object. This step is required BEFORE the AWS-VPC site is created with an Appstack node
+- aws-base-1 --> deploys AWS VPCs, Subnets, Internet Gateways, Route Tables, EIPs, NAT Gateways, Security Groups, etc
+- mk8s-cluster-1 --> Deploys the XC Managed K8s Cluster object. This step is required BEFORE the AWS-VPC site is created with an App Stack node
 
-### Group 2 module definitions:  
+### Group 2 module definitions:
 
-- aws-appstack-site-1 --> Tells XC to deploy an AWS-VPC site with an Appstack node, using outputs from the aws-base-1 module
+- aws-appstack-site-1 --> Tells XC to deploy an AWS-VPC site with an App Stack node, using outputs from the aws-base-1 module
 
-> ***Note:*** If you see *PendingVerification Error*, go to [Pending Verification Recovery](Pend-ver.md) otherwise, proceed. 
+> ***Note:*** If you see *PendingVerification Error*, go to [Pending Verification Recovery](Pend-ver.md) otherwise, proceed.
 
 ## Verify
 
 1. Log into XC console
 
-2. Select Multi-cloud Network Connect --> Site Management --> AWS VPC Sites --> (Observe the state of the site - No action needed)
+2. Select *Multi-Cloud Network Connect* --> *Site Management* --> *AWS VPC Sites* --> (Observe the state of the site - No action needed)
 
 ![](./images/view-vpc-site.png)
 ![](./images/site-mgmt-waiting.png)
@@ -52,8 +52,7 @@ You should see the following groups queued up for deployment
 
 ![Managed K8s object](./images/mk8s-object.png)
 
-  > **Note:** The vpc appstack site takes over 30 mins to change to "online" state, this is expected. If you see "Applied with Errors" or "Waiting for Registration", please ping the lab instructors.
-  
+  > **Note:** The VPC App Stack site takes over 30 mins to change to "online" state, this is expected. If you see "Applied with Errors" or "Waiting for Registration", please ping the lab instructors.
 
   If the site creation is proceeding successfully, you should see the following:
 
@@ -69,6 +68,5 @@ You should see the following groups queued up for deployment
 
 <br/>
 <br/>
-
 
 ## Next Step -> [VK8s & Kubeconfigs](lab_1.1.md)
