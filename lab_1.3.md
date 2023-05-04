@@ -24,9 +24,11 @@ The *appstack-lab.hcl* group will perform the following:
 <br/>
 <br/>
 
-The outcome of the above steps will result in this deployment architecture
+The outcome of the above steps will result in this deployment architecture. The same namespace could be extended to multiple CE sites, to distribute the application across different K8s clusters (On-prem and Cloud Sites)
 
-![](./images/Brewz-Architecture.png)
+![](./images/brewz-arch.png)
+
+
 
 ### Review Objects/Routes
 
