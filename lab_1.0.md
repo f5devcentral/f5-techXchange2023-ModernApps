@@ -58,6 +58,10 @@ You should see the following groups queued up for deployment
 
 ![](./images/site-mgmt-waiting.png)
 
+The site will go through the follow state transitions
+
+<img src="images/site-states.png" alt="UDF Resources 2" width="600"/>
+
 <br/>
 <br/>
 
