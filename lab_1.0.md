@@ -58,7 +58,7 @@ You should see the following groups queued up for deployment
 
 ![](./images/site-mgmt-waiting.png)
 
-The site will go through the follow state transitions
+The site will go through the follow state transitions, wait till you see the site "Online"
 
 <img src="images/site-states.png" alt="UDF Resources 2" width="600"/>
 
