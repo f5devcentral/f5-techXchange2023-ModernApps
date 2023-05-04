@@ -59,10 +59,19 @@ A quick way to view where each service was deployed on the XC Console is to go t
 <br/>
 ![](./images/lb-view.png)
 
+
 Now click on *Origins*, and observe the *Site* column, to identify which service was deployed onto each cluster.
 <br/>
 <br/>
 ![](./images/lb-origins-locations.png)
 <br/>
 <br/>
+
+To view the application, open a browser from anywhere, and navigate to your FQDN
+<br/>
+<br/>
+> ***Note:*** remember to replace <xc_namespace> in the link below with your XC Namespace
+
+[https://brewz-xc-namespace.labs.f5demos.com](https://brewz-xc-namespace.labs.f5demos.com)
+![](./images/)
 ## Next Step  [Ridiculously Easy Demos](lab_1.4.md)
