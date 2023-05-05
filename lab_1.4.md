@@ -11,9 +11,9 @@
     ./appstack-lab/teardown-lab-environment.sh 
     ```
 
-Terragrunr with destroy all the deployed modules, in the reverse sequence of deployment (Last-in-first-out)
+Terragrunt will destroy all the deployed modules, in the reverse sequence of deployment (Last-in-first-out)
 
-> ***Note:*** If you see the errors, they are likely due to XC API throttling or timeouts. Please re-attempt the previous step, and type 'y' when prompted. If you are unable to get a clean destroy, please make the lab instructors aware.You may have to re-attempt this command 3 to 4 times
+> ***Note:*** If you see errors, they are likely due to XC API throttling or timeouts. Please re-attempt the previous step, and type 'y' when prompted. If you are unable to get a clean destroy, please make the lab instructors aware. You may have to re-attempt this command 3 to 4 times
 <br/>
 <br/>
 
