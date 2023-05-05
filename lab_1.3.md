@@ -32,7 +32,7 @@ The outcome of the above steps will result in this deployment architecture. The 
 
 ### Review Objects/Routes
 
-Within a few minutes, you will see a HTTP Load Balancer appear in your XC namespace. In the XC Console, click on *Distributed Apps* --> *Manage* --> *HTTP Load Balancers*
+Within a few minutes, you will see a HTTP Load Balancer appear in your XC namespace. In the XC Console, click on *Multi-Cloud App Connect* --> *Manage* --> *HTTP Load Balancers*
 <br/>
 <br/>
 ![](./images/lb-object.png)
@@ -54,7 +54,7 @@ You should see several routes created for Brewz services
 <br/>
 <br/>
 
-A quick way to view where each service was deployed on the XC Console is to go to *Distributed Apps* --> *Virtual Hosts* --> *HTTP Load Balancers* --> (click on your LB)
+A quick way to view where each service was deployed on the XC Console is to go to *Multi-Cloud App Connect* --> *Virtual Hosts* --> *HTTP Load Balancers* --> (click on your LB)
 <br/>
 <br/>
 ![](./images/lb-view.png)

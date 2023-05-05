@@ -11,22 +11,24 @@
     ./appstack-lab/teardown-lab-environment.sh 
     ```
 
-The output looks as follows:
-<br/>
-<br/>
- Terragrunt provides this flexibility to perform a full destruction, in the reverse sequence of deployment, using a single command.
+Terragrunr with destroy all the deployed modules, in the reverse sequence of deployment (Last-in-first-out)
+
+> ***Note:*** If you see the errors, they are likely due to XC API throttling or timeouts. Please re-attempt the previous step, and type 'y' when prompted. If you are unable to get a clean destroy, please make the lab instructors aware.You may have to re-attempt this command 3 to 4 times
 <br/>
 <br/>
 
-> ***Note:*** If you see the errors, they are likely due to XC API throttling or timeouts. Please re-attempt the previous step, and type 'y' when prompted. If you are unable to get a clean destroy, please make the lab instructors aware.
+Next, destroy the objects specific to the UDF environment:
 <br/>
-<br/>
+  ``` bash
+  terragrunt run-all destroy --terragrunt-modules-that-include ./env-setup.hcl
+  ```
+
 
 # Lab Complete
 
->  For a *__Ridiculously easy__* method to reproduce this demo within UDF, use the steps below
+## Ridiculously Easy Demos
+>  To reproduce this demo within UDF, use the steps below
 
-<br/>
 <br/>
 
 * Step 1 - Environmental Setup
@@ -42,12 +44,18 @@ The output looks as follows:
   ```
 
 * Step 3 - Illustrate the various features, settings, locations, etc as needed
-
+<br/>
+Suggestions:
+1. Virtual K8s cluster/services/deployments/pods
+1. Managed K8s clusters/services/deployments/pods
+1. Site locations for Mk8s
+1. Site locations for Vk8s virtual site
+1. Analytics dashboard 
 <br/> 
 <br/>
 
 * Step 4 - Destroy Everything! 
-```bash
-    cd ~/terraform-modular-demo-framework
-    ./appstack-lab/teardown-lab-environment.sh 
-```
+    ```bash
+    terragrunt run-all destroy --terragrunt-modules-that-include ./appstack-lab.hcl
+    terragrunt run-all destroy --terragrunt-modules-that-include ./env-setup.hcl 
+    ```
