@@ -1,4 +1,4 @@
-# Deploying Brewz on Virtual K8s and Managed K8s
+# Review Virtual K8s and Managed K8s clusters
 
 By now, both MK8s and VK8s clusters should be *ready/alive* and a kubeconfig will have been generated and downloaded for both clusters.
 <br/>

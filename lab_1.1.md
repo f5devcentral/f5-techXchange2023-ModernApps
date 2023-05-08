@@ -32,4 +32,4 @@ Learn more about Virtual K8s [here](https://docs.cloud.f5.com/docs/ves-concepts/
 
 Learn more about Managed K8s [here](https://docs.cloud.f5.com/docs/services/app-stack/managed-kubernetes)
 
-## Next Step  [Deploy Brewz](lab_1.2.md)
+## Next Step  [Review Mk8s/VK8s](lab_1.2.md)
