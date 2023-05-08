@@ -79,7 +79,7 @@ Brewz is an ecommerce application that provides a retail storefront for customer
 
 1. Once you are logged into the tenant, navigate to **Multi-Cloud App Connect**.
 
-1. In the URL, you will find the namespace that has been randomly generated for you:
+1. In the URL and navigation breadcrumb, you will find the namespace that has been randomly generated for you:
 
     <img src="images/xc-namespace.png" alt="XC Namespace" width="800"/>
 
@@ -93,11 +93,12 @@ Brewz is an ecommerce application that provides a retail storefront for customer
     cd ~/terraform-modular-demo-framework
     ```
 
-1. Run the following script to initiate the infrastructure build for this lab: (***Note:*** ----> Copy-paste will not work)
+1. Run the following commpand to set your namespace environment variable. This is the namespace you captured in the step 8: (***Note:*** ----> Copy-paste will not work)
 
     ```bash
     export TF_VAR_namespace=<your xc namespace here>
     ```
+    ***example:*** TF_VAR_namespace=noted-dingo   (Do not copy this)
 
 1. Next, run the following command to start the UDF environment setup:
 
