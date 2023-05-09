@@ -72,8 +72,9 @@ To view the application, open a browser from anywhere, and navigate to your FQDN
 <br/>
 > ***Note:*** remember to replace <xc_namespace> in the link below with your XC Namespace
 
-[https://brewz-xc-namespace.labs.f5demos.com](https://brewz-xc-namespace.labs.f5demos.com)
+`https://brewz-<xc_namespace>.labs.f5demos.com`
 <br/>
+
 ![](./images/brewz-web.png)
 <br/>
 <br/>
