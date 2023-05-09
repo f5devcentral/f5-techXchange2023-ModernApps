@@ -38,7 +38,7 @@ You should see the following groups queued up for deployment
 
 1. Log into XC console
 
-2. Select *Multi-Cloud Network Connect* --> *Site Management* --> *AWS VPC Sites* --> (Observe the state of the site - No action needed)
+2. Select *Multi-Cloud Network Connect* --> *Manage* --> *Site Management* --> *AWS VPC Sites* --> (Observe the state of the site - No action needed)
 
 ![](./images/view-vpc-site.png)
 ![](./images/site-mgmt-waiting.png)
